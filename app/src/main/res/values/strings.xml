@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">High_v1</string>
+    <string name="start">시작하기</string>
+    <string name="start_question">이미 계정이 있으신가요?</string>
+    <string name="start_login">로그인하기</string>
+
+    <string name="signup">#회원가입</string>
+    <string name="login">#로그인</string>
+
+    <string name="start_id">아이디</string>
+    <string name="start_id_hint">5~15자, 아이디를 입력하세요</string>
+    <string name="start_pw">비밀번호</string>
+    <string name="start_pw_hint">8~20자, 비밀번호를 입력하세요</string>
+    <string name="signup_email">이메일</string>
+    <string name="signup_email_hint">이메일을 입력하세요</string>
+    <string name="signup_nick">닉네임</string>
+    <string name="signup_nick_hint">2~8자, 닉네임을 입력하세요</string>
+
+    <string name="home_curious">궁금한 </string>
+    <string name="home_school"> #고등학교</string>
+    <string name="home_of">의</string>
+    <string name="home_information">정보를 미리 확인하세요</string>
+    <string name="home_before">고등학교 선택 전, 다양한 학교 정보 확인</string>
+    <string name="home_inspection">나의 적성검사 하러가기 -></string>
+    <string name="home_check">고등학교를 확인하기 전 나에게 맞는 적성을 확인하세요</string>
+    <string name="home_recommend">🔥 고등학교 추천을 이렇게!</string>
+
+    <string name="inspection_before">&lt;- 이전</string>
+    <string name="inspection_after">다음 -></string>
+    <string name="inspection_end">완료</string>
+    <string name="inspection_never">&lt;- 전혀 그렇지 않다</string>
+    <string name="inspection_very">매우 그렇다 -></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
