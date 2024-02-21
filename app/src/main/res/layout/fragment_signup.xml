@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".start.SignupFragment"
+    android:background="@color/white">
+    
+    <ImageView
+        android:id="@+id/img_signup_logo"
+        style="@style/img_start_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_signup_intro"
+        style="@style/text_start_intro"
+        android:text="@string/signup"
+        app:layout_constraintStart_toStartOf="@id/img_signup_logo"
+        app:layout_constraintEnd_toEndOf="@id/img_signup_logo"
+        app:layout_constraintTop_toBottomOf="@id/img_signup_logo"/>
+
+    <TextView
+        android:id="@+id/text_signup_mail"
+        style="@style/text_start_edit"
+        android:text="@string/signup_email"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/text_signup_intro"
+        app:layout_constraintStart_toStartOf="@id/lay_signup_mail"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_signup_mail"
+        style="@style/lay_start_edit"
+        app:layout_constraintStart_toStartOf="@id/img_signup_logo"
+        app:layout_constraintEnd_toEndOf="@id/img_signup_logo"
+        app:layout_constraintTop_toBottomOf="@id/text_signup_mail">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_signup_mail"
+            style="@style/edit_start"
+            android:hint="@string/signup_email_hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_signup_id"
+        style="@style/text_start_edit"
+        android:text="@string/start_id"
+        app:layout_constraintTop_toBottomOf="@id/lay_signup_mail"
+        app:layout_constraintStart_toStartOf="@id/lay_signup_id"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_signup_id"
+        style="@style/lay_start_edit"
+        app:layout_constraintStart_toStartOf="@id/lay_signup_mail"
+        app:layout_constraintEnd_toEndOf="@id/lay_signup_mail"
+        app:layout_constraintTop_toBottomOf="@id/text_signup_id">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_signup_id"
+            style="@style/edit_start"
+            android:hint="@string/start_id_hint"
+            android:maxLength="15"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_signup_pw"
+        style="@style/text_start_edit"
+        android:text="@string/start_pw"
+        app:layout_constraintTop_toBottomOf="@id/lay_signup_id"
+        app:layout_constraintStart_toStartOf="@id/lay_signup_pw"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lay_signup_pw"
+        style="@style/lay_start_edit"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintStart_toStartOf="@id/lay_signup_id"
+        app:layout_constraintEnd_toEndOf="@id/lay_signup_id"
+        app:layout_constraintTop_toBottomOf="@id/text_signup_pw">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_signup_pw"
+            style="@style/edit_start"
+            android:hint="@string/start_pw_hint"
+            android:inputType="textPassword"
+            android:maxLength="20"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signup"
+        style="@style/btn"
+        android:text="다음"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
