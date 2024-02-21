@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
+    android:background="@drawable/home_recycler_background">
+
+    <ImageView
+        android:id="@+id/img_home_item_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/item_school_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_home_item_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="특목고"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/img_home_item_logo"
+        app:layout_constraintTop_toTopOf="@id/img_home_item_logo"/>
+
+    <TextView
+        android:id="@+id/text_home_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="대덕소프트웨어마이스터고등학교"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/text_home_item_type"
+        app:layout_constraintTop_toBottomOf="@id/text_home_item_type"/>
+
+    <ImageView
+        android:id="@+id/img_home_item_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_place"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="@id/text_home_item_name"
+        app:layout_constraintTop_toTopOf="@id/text_home_item_place"/>
+
+    <TextView
+        android:id="@+id/text_home_item_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_light"
+        android:text="대전광역시 유성구"
+        android:textColor="#999999"
+        android:textSize="14sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/img_home_item_place"
+        app:layout_constraintTop_toBottomOf="@id/text_home_item_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
