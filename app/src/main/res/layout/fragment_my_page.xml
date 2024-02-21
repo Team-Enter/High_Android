@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mypage.MyPageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_my_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/img_my_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/text_my"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_my_cancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/my_cancel"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_my_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@drawable/my_page_background"
+        android:backgroundTint="@color/blue"
+        android:padding="20dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_my_header">
+
+        <ImageView
+            android:id="@+id/img_my_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/my_page_profile"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_my_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="푕힁영"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@id/img_my_profile"
+            app:layout_constraintTop_toTopOf="@id/img_my_profile"/>
+
+        <TextView
+            android:id="@+id/text_my_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mail"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="#83C4FF"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/text_my_name"
+            app:layout_constraintTop_toBottomOf="@id/text_my_name"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_my_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.9"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_my_profile">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_my_logout"
+            style="@style/btn_my"
+            android:text="로그아웃"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_my_bug"
+            style="@style/btn_my"
+            android:text="버그 제보"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
