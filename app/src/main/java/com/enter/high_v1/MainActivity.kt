@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getUserData()
-
         addFragment(0)
     }
 
@@ -37,24 +35,5 @@ class MainActivity : AppCompatActivity() {
         }
         transaction.addToBackStack(null)
         transaction.commit()
-    }
-
-    private fun getUserData() {
-        val apiProvider = ApiProvider.getInstance().create(ServerApi::class.java)
-        val token = "Bearer " + Token().getToken()
-        apiProvider.getUserInfo(token).enqueue(object : Callback<MyPageData> {
-            override fun onResponse(call: Call<MyPageData>, response: Response<MyPageData>) {
-                if (response.isSuccessful) {
-                    userData = response.body()!!
-                } else {
-                    Log.d("server", response.code().toString())
-                    Toast.makeText(this@MainActivity, "정보를 불러오는데 실패하였습니다", Toast.LENGTH_SHORT).show()
-                }
-            }
-            override fun onFailure(call: Call<MyPageData>, t: Throwable) {
-                Log.d("server", t.message.toString())
-                Toast.makeText(this@MainActivity, "서버 연동에 실패하였습니다", Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 }
