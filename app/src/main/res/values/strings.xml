@@ -30,7 +30,4 @@
     <string name="inspection_end">완료</string>
     <string name="inspection_never">&lt;- 전혀 그렇지 않다</string>
     <string name="inspection_very">매우 그렇다 -></string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
