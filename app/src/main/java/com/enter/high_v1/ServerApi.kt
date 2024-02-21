@@ -18,8 +18,20 @@ interface ServerApi {
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     @GET("/user/info")
-    fun getUserInfo(@Header("access_token") token : String): Call<MyPageData>
+    fun getUserInfo(@Header("Authorization") token : String): Call<MyPageData>
 
     @POST("/user/logout")
-    fun logout(@Header("access_token") token: String): Call<Void>
+    fun logout(@Header("Authorization") token: String): Call<Void>
+
+    @GET("/feeds")
+    fun recommendSchool(
+        @Header("Authorization") token: String,
+        @Body request: RecommendSchoolRequest
+    ): Call<RecommendSchoolResponse>
+
+    @GET("/feeds/info")
+    fun schoolInfo(
+        @Header("Authorization") token: String,
+        @Body request: SchoolInfoRequest
+    ): Call<SchoolInfoResponse>
 }
