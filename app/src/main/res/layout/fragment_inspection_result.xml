@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".inspection.InspectionResultFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_inspectionR_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/img_inspectionR_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_arrow"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_inspectionR_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/my_page"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_inspectionR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_inspectionR_header">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/text_inspectionR_nick"
+                    style="@style/text_inspectionR"
+                    android:layout_width="wrap_content"
+                    android:text="푕힁영"
+                    android:textSize="20sp"/>
+                <TextView
+                    style="@style/text_inspectionR"
+                    android:layout_width="wrap_content"
+                    android:text="@string/inspection_result_q1"
+                    android:layout_marginStart="5dp"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_inspectionR"
+                android:text="@string/inspection_result_q2"
+                android:textColor="@color/text_blue"/>
+
+            <TextView
+                style="@style/text_inspectionR"
+                android:text="@string/inspection_result_q3"/>
+            
+            <TextView
+                android:id="@+id/text_inspectionR_first"
+                style="@style/text_inspectionR_result"
+                android:text="@string/tag_sport"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/text_inspectionR_second"
+                style="@style/text_inspectionR_result"
+                android:text="@string/tag_hand"/>
+            
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_inspectionR_recommend"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        style="@style/btn"
+        android:textSize="16sp"
+        android:text="@string/inspection_result_recommend"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/card_inspectionR"
+        app:layout_constraintEnd_toEndOf="@id/card_inspectionR"
+        app:layout_constraintTop_toBottomOf="@id/card_inspectionR" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/inspection_result_talk"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/btn_inspectionR_recommend"
+        app:layout_constraintEnd_toEndOf="@id/btn_inspectionR_recommend"
+        app:layout_constraintTop_toBottomOf="@id/btn_inspectionR_recommend"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
