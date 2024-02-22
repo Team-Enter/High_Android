@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".inspection.InspectionStartFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_inspectionS_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/img_inspectionS_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_arrow"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_inspectionS_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/my_page"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_inspectionS_q1"
+        style="@style/text_inspectionS_normal"
+        android:text="@string/inspection_startQ1"
+        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_inspectionS_header"/>
+    <TextView
+        android:id="@+id/text_inspectionS_q1_1"
+        style="@style/text_inspectionS_normal"
+        android:text="@string/inspection_startQ1_2"
+        app:layout_constraintStart_toEndOf="@id/text_inspectionS_q1"
+        app:layout_constraintBottom_toBottomOf="@id/text_inspectionS_q1"
+        app:layout_constraintTop_toTopOf="@id/text_inspectionS_q1"/>
+
+    <TextView
+        android:id="@+id/text_inspectionS_q2"
+        style="@style/text_inspectionS_normal"
+        android:text="@string/inspection_startQ2"
+        app:layout_constraintStart_toStartOf="@id/text_inspectionS_q1"
+        app:layout_constraintTop_toBottomOf="@id/text_inspectionS_q1"/>
+
+    <TextView
+        android:id="@+id/text_inspectionS_q3"
+        style="@style/text_inspectionS_blue"
+        android:text="@string/inspection_startQ3"
+        app:layout_constraintStart_toStartOf="@id/text_inspectionS_q2"
+        app:layout_constraintTop_toBottomOf="@id/text_inspectionS_q2"/>
+    <TextView
+        style="@style/text_inspectionS_normal"
+        android:text="@string/inspection_startQ3_1"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/text_inspectionS_q3"
+        app:layout_constraintTop_toTopOf="@id/text_inspectionS_q3"
+        app:layout_constraintBottom_toBottomOf="@id/text_inspectionS_q3"/>
+
+    <TextView
+        android:id="@+id/text_inspectionS_q4"
+        style="@style/text_inspectionS_normal"
+        android:text="@string/inspection_startQ4"
+        app:layout_constraintStart_toStartOf="@id/text_inspectionS_q3"
+        app:layout_constraintTop_toBottomOf="@id/text_inspectionS_q3"/>
+
+    <TextView
+        android:id="@+id/text_inspectionS_q5"
+        style="@style/text_inspectionS_blue"
+        android:text="@string/inspection_startQ5"
+        app:layout_constraintStart_toStartOf="@id/text_inspectionS_q4"
+        app:layout_constraintTop_toBottomOf="@id/text_inspectionS_q4"/>
+
+    <TextView
+        android:id="@+id/text_inspectionS_q6"
+        style="@style/text_inspectionS_normal"
+        android:text="@string/inspection_startQ6"
+        app:layout_constraintStart_toStartOf="@id/text_inspectionS_q5"
+        app:layout_constraintTop_toBottomOf="@id/text_inspectionS_q5"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="40dp"
+        app:flexWrap="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_inspectionS_q6">
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_sport"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_sport" />
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_hand"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_hand"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_space"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_space"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_music"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_music"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_language"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_language"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_art"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_art"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_math"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_math"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_self"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_self"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_human"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_human"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_nature"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_nature"/>
+
+        <TextView
+            android:id="@+id/text_inspectionS_tag_creative"
+            style="@style/text_inspectionS_tag"
+            android:text="@string/tag_creative"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <TextView
+        android:id="@+id/text_inspectionS_anno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspection_start_anno"
+        android:textSize="16sp"
+        android:textColor="#A1A1A1"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintStart_toStartOf="@id/btn_inspectionS_start"
+        app:layout_constraintEnd_toEndOf="@id/btn_inspectionS_start"
+        app:layout_constraintBottom_toTopOf="@id/btn_inspectionS_start"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_inspectionS_start"
+        style="@style/btn"
+        android:text="시작하기"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
