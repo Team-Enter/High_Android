@@ -1,6 +1,10 @@
 package com.enter.high_v1
 
 import com.enter.high_v1.mypage.MyPageData
+import com.enter.high_v1.school.SchoolInfoRequest
+import com.enter.high_v1.school.SchoolInfoResponse
+import com.enter.high_v1.school.SchoolRecommendRequest
+import com.enter.high_v1.school.SchoolRecommendResponse
 import com.enter.high_v1.start.LoginRequest
 import com.enter.high_v1.start.LoginResponse
 import com.enter.high_v1.start.SignupRequest
@@ -26,8 +30,8 @@ interface ServerApi {
     @GET("/feeds")
     fun recommendSchool(
         @Header("Authorization") token: String,
-        @Body request: RecommendSchoolRequest
-    ): Call<RecommendSchoolResponse>
+        @Body request: SchoolRecommendRequest
+    ): Call<SchoolRecommendResponse>
 
     @GET("/feeds/info")
     fun schoolInfo(
