@@ -25,9 +25,45 @@
     <string name="home_check">고등학교를 확인하기 전 나에게 맞는 적성을 확인하세요</string>
     <string name="home_recommend">🔥 고등학교 추천을 이렇게!</string>
 
+    <string name="inspection_startQ1">🧐 해당 적성검사</string>
+    <string name="inspection_startQ1_2">는</string>
+    <string name="inspection_startQ2">아래 키워드를 기반으로</string>
+    <string name="inspection_startQ3">#다양한_능력 </string>
+    <string name="inspection_startQ3_1">중</string>
+    <string name="inspection_startQ4">높은 능력을 파악하고, 이를 바탕으로</string>
+    <string name="inspection_startQ5">#나에게_맞는_학과 #고등학교</string>
+    <string name="inspection_startQ6">정보를 제공합니다</string>
+    <string name="inspection_start_anno">시작하기를 클릭시 적성검사가 시작됩니다.</string>
+
+    <string name="tag_sport">#신체·운동능력</string>
+    <string name="tag_hand">#손재능</string>
+    <string name="tag_space">#공간지각력</string>
+    <string name="tag_music">#음악능력</string>
+    <string name="tag_language">#언어능력</string>
+    <string name="tag_art">#예술시각능력</string>
+    <string name="tag_math">#수리·논리력</string>
+    <string name="tag_self">#자기성찰능력</string>
+    <string name="tag_human">#대인관계능력</string>
+    <string name="tag_nature">#자연친화력</string>
+    <string name="tag_creative">#창의력</string>
+
     <string name="inspection_before">&lt;- 이전</string>
     <string name="inspection_after">다음 -></string>
     <string name="inspection_end">완료</string>
     <string name="inspection_never">&lt;- 전혀 그렇지 않다</string>
     <string name="inspection_very">매우 그렇다 -></string>
+
+    <string name="inspection_submit">제출하기</string>
+
+    <string name="inspection_result_q1">님의</string>
+    <string name="inspection_result_q2">#적성검사_결과</string>
+    <string name="inspection_result_q3">가장 높은 적성 2가지</string>
+    <string name="inspection_result_recommend">고등학교 추천받으러가기 -></string>
+
+    <string name="recommend_q1"> 님, 추천받은</string>
+    <string name="recommend_q2">#고등학교</string>
+    <string name="recommend_q3"> 를 확인해 보세요!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
