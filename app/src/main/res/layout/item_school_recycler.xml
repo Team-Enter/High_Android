@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="15dp"
-    android:background="@drawable/home_recycler_background">
+    android:background="@drawable/home_recycler_background"
+    android:id="@+id/lay_school_item">
 
     <ImageView
         android:id="@+id/img_home_item_logo"
