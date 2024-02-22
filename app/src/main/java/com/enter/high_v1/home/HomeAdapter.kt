@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.enter.high_v1.databinding.ItemHomeRecyclerBinding
+import com.enter.high_v1.databinding.ItemSchoolRecyclerBinding
 
 class HomeAdapter(private val homeList: List<HomeListData>) : Adapter<HomeAdapter.HomeViewHolder>() {
-    inner class HomeViewHolder(private val binding: ItemHomeRecyclerBinding) : ViewHolder(binding.root) {
+    inner class HomeViewHolder(private val binding: ItemSchoolRecyclerBinding) : ViewHolder(binding.root) {
         fun bind(homeData: HomeListData) {
             binding.textHomeItemName.text = homeData.schoolName
             binding.textHomeItemPlace.text = homeData.place
@@ -16,7 +16,7 @@ class HomeAdapter(private val homeList: List<HomeListData>) : Adapter<HomeAdapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        val binding = ItemHomeRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemSchoolRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeViewHolder(binding)
     }
 
