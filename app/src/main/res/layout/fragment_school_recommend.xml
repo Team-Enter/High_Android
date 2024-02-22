@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".school.SchoolRecommendFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_recommend_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/img_recommend_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_arrow"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_recommend_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/my_page"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_recommend_header">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_recommend_nick"
+                style="@style/text_recommend"
+                android:text="푕힁영"
+                android:textSize="26sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                style="@style/text_recommend"
+                android:text="@string/recommend_q1"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/text_recommend_nick"
+                app:layout_constraintTop_toTopOf="@id/text_recommend_nick"
+                app:layout_constraintBottom_toBottomOf="@id/text_recommend_nick"/>
+
+            <TextView
+                android:id="@+id/text_recommend_school"
+                style="@style/text_recommend"
+                android:text="@string/recommend_q2"
+                android:textSize="25sp"
+                android:textColor="@color/text_blue"
+                app:layout_constraintStart_toStartOf="@id/text_recommend_nick"
+                app:layout_constraintTop_toBottomOf="@id/text_recommend_nick"/>
+
+            <TextView
+                style="@style/text_recommend"
+                android:text="@string/recommend_q3"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/text_recommend_school"
+                app:layout_constraintTop_toTopOf="@id/text_recommend_school"
+                app:layout_constraintBottom_toBottomOf="@id/text_recommend_school"/>
+
+            <LinearLayout
+                android:id="@+id/lay_recommend_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/text_recommend_school"
+                app:layout_constraintTop_toBottomOf="@id/text_recommend_school">
+                <TextView
+                    android:id="@+id/text_recommend_tag_first"
+                    style="@style/text_recommend_tag"
+                    android:text="@string/tag_sport"/>
+                <TextView
+                    android:id="@+id/text_recommend_tag_second"
+                    style="@style/text_recommend_tag"
+                    android:text="@string/tag_hand"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_recommend"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.89"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lay_recommend_tag"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
