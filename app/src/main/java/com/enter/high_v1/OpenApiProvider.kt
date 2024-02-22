@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object OpenApiProvider {
     private var instance: Retrofit? = null
-    private val OPEN_API_URL = "www.career.go.kr/inspct/openapi/test"
+    private val OPEN_API_URL = "https://www.career.go.kr/"
 
     fun getInstance(): Retrofit {
         if (instance == null) {
