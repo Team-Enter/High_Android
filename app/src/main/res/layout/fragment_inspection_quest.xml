@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".inspection.InspectionQuestFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_inspectionQ_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/img_inspectionQ_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_arrow"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_inspectionQ_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/my_page"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_inspectionQ"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:nestedScrollingEnabled="false"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_inspectionQ_header"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_inspectionQ_submit"
+        style="@style/btn"
+        android:text="@string/inspection_submit"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/recycler_inspectionQ"
+        app:layout_constraintEnd_toEndOf="@id/recycler_inspectionQ"
+        app:layout_constraintBottom_toBottomOf="@id/recycler_inspectionQ"
+        app:layout_constraintVertical_bias="1.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
