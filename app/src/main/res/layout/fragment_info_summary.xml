@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="30dp"
+    tools:context=".school.InfoSummaryFragment">
+
+    <TextView
+        android:id="@+id/text_summary_info"
+        style="@style/text_summary_title"
+        android:text="@string/summary"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <TextView
+        android:id="@+id/text_summary_day"
+        style="@style/text_summary_title"
+        android:text="@string/summary_day"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/text_summary_info"
+        app:layout_constraintTop_toBottomOf="@id/text_summary_info"/>
+    <TextView
+        android:id="@+id/text_summary_content_day"
+        style="@style/text_summary_content"
+        android:text="1991.09.14"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@id/text_summary_day"
+        app:layout_constraintTop_toTopOf="@id/text_summary_day"/>
+
+    <TextView
+        android:id="@+id/text_summary_type"
+        style="@style/text_summary_title"
+        android:text="@string/summary_type"
+        app:layout_constraintStart_toStartOf="@id/text_summary_day"
+        app:layout_constraintTop_toBottomOf="@id/text_summary_day"/>
+    <TextView
+        android:id="@+id/text_summary_content_type"
+        style="@style/text_summary_content"
+        android:text="공립"
+        app:layout_constraintStart_toStartOf="@id/text_summary_content_day"
+        app:layout_constraintTop_toTopOf="@id/text_summary_type"/>
+
+    <TextView
+        android:id="@+id/text_summary_gender"
+        style="@style/text_summary_title"
+        android:text="@string/summary_gender"
+        app:layout_constraintStart_toStartOf="@id/text_summary_type"
+        app:layout_constraintTop_toBottomOf="@id/text_summary_type"/>
+    <TextView
+        android:id="@+id/text_summary_content_gender"
+        style="@style/text_summary_content"
+        android:text="남녀공학"
+        app:layout_constraintStart_toStartOf="@id/text_summary_content_type"
+        app:layout_constraintTop_toTopOf="@id/text_summary_gender"/>
+
+    <TextView
+        android:id="@+id/text_summary_number"
+        style="@style/text_summary_title"
+        android:text="@string/summary_number"
+        app:layout_constraintStart_toStartOf="@id/text_summary_gender"
+        app:layout_constraintTop_toBottomOf="@id/text_summary_gender"/>
+    <TextView
+        android:id="@+id/text_summary_content_number"
+        style="@style/text_summary_content"
+        android:text="042-866-8822"
+        app:layout_constraintStart_toStartOf="@id/text_summary_content_gender"
+        app:layout_constraintTop_toTopOf="@id/text_summary_number"/>
+
+    <TextView
+        android:id="@+id/text_summary_place"
+        style="@style/text_summary_title"
+        android:text="@string/summary_place"
+        app:layout_constraintStart_toStartOf="@id/text_summary_number"
+        app:layout_constraintTop_toBottomOf="@id/text_summary_number"/>
+    <TextView
+        android:id="@+id/text_summary_content_place"
+        style="@style/text_summary_content"
+        android:text="대전광역시 유성구 가정북로 76"
+        app:layout_constraintStart_toStartOf="@id/text_summary_content_number"
+        app:layout_constraintTop_toTopOf="@id/text_summary_place"/>
+
+    <TextView
+        android:id="@+id/text_summary_page"
+        style="@style/text_summary_title"
+        android:text="@string/summary_home_page"
+        app:layout_constraintStart_toStartOf="@id/text_summary_place"
+        app:layout_constraintTop_toBottomOf="@id/text_summary_place"/>
+    <TextView
+        android:id="@+id/text_summary_content_page"
+        style="@style/text_summary_content"
+        android:text="https://dsmhs.djsch.kr/main.do"
+        app:layout_constraintStart_toStartOf="@id/text_summary_content_place"
+        app:layout_constraintTop_toTopOf="@id/text_summary_page"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
