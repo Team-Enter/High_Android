@@ -10,6 +10,11 @@
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginBottom">40dp</item>
     </style>
+    <style name="text_bold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
 
     <style name="text_choice">
         <item name="android:layout_width">wrap_content</item>
@@ -23,11 +28,8 @@
         <item name="android:layout_marginTop">100dp</item>
         <item name="android:src">@drawable/text_logo</item>
     </style>
-    <style name="text_start_intro">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="text_start_intro" parent="text_bold">
         <item name="android:background">@drawable/start_intro_background</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
         <item name="android:textSize">20sp</item>
     </style>
     <style name="text_start_edit">
@@ -53,10 +55,7 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="text_home_intro">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
+    <style name="text_home_intro" parent="text_bold">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_marginTop">-3dp</item>
@@ -73,10 +72,7 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="text_inspection_start">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
+    <style name="text_inspection_start" parent="text_bold">
         <item name="android:layout_marginTop">5dp</item>
     </style>
     <style name="text_inspectionS_normal" parent="text_inspection_start">
@@ -87,10 +83,7 @@
         <item name="android:textColor">@color/text_blue</item>
         <item name="android:textSize">24sp</item>
     </style>
-    <style name="text_inspectionS_tag">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
+    <style name="text_inspectionS_tag" parent="text_bold">
         <item name="android:textSize">16sp</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">16dp</item>
@@ -110,10 +103,7 @@
         <item name="android:textSize">17sp</item>
         <item name="android:layout_marginEnd">13dp</item>
     </style>
-    <style name="text_inspection_item_answer_tip">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
+    <style name="text_inspection_item_answer_tip" parent="text_bold">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#C2C2C2</item>
         <item name="android:layout_marginTop">10dp</item>
@@ -137,20 +127,49 @@
         <item name="android:layout_marginTop">10dp</item>
     </style>
 
-    <style name="text_recommend">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
+    <style name="text_recommend" parent="text_bold">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">24sp</item>
     </style>
-    <style name="text_recommend_tag">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="text_recommend_tag" parent="text_bold">
         <item name="android:background">@drawable/recommend_tag_background</item>
-        <item name="android:fontFamily">@font/inter_bold</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="tab_textAppearance">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontStyle">normal</item>
+    </style>
+
+    <style name="text_summary_title" parent="text_bold">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+    <style name="text_summary_content" parent="text_bold">
+        <item name="android:textColor">#7E7E7E</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_depart_table">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:layout_margin">0.5dp</item>
+    </style>
+    <style name="text_depart_table_title" parent="text_depart_table">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/blue</item>
+    </style>
+    <style name="text_depart_table_content" parent="text_depart_table">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
     </style>
 </resources>
