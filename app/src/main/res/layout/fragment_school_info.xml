@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".school.SchoolInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_info_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/img_info_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_arrow"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/img_info_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/my_page"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_info_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="특목고"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="#999999"
+        android:textSize="18sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_info_header"/>
+
+    <TextView
+        android:id="@+id/text_info_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="대덕소프트웨어마이스터고등학교"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/text_info_type"
+        app:layout_constraintTop_toBottomOf="@id/text_info_type"/>
+
+    <ImageView
+        android:id="@+id/img_info_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/item_place"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="@id/text_info_name"
+        app:layout_constraintTop_toTopOf="@id/text_info_place"
+        app:layout_constraintBottom_toBottomOf="@id/text_info_place"/>
+
+    <TextView
+        android:id="@+id/text_info_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_light"
+        android:text="대전광역시 유성구"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/img_info_place"
+        app:layout_constraintTop_toBottomOf="@id/text_info_name"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/lay_info_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:tabTextAppearance="@style/tab_textAppearance"
+        app:tabTextColor="@color/black"
+        app:tabSelectedTextColor="@color/black"
+        app:tabIndicatorColor="@color/blue"
+        app:tabBackground="@drawable/tab_layout_select"
+        app:tabIndicatorFullWidth="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_info_place">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_info_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개요"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_info_depart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학과정보"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/lay_info_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/lay_info_tab"
+        app:layout_constraintEnd_toEndOf="@id/lay_info_tab"
+        app:layout_constraintTop_toBottomOf="@id/lay_info_tab"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
