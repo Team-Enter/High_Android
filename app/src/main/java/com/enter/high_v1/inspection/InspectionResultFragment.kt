@@ -9,11 +9,10 @@ import com.enter.high_v1.MainActivity
 import com.enter.high_v1.R
 import com.enter.high_v1.databinding.FragmentInspectionResultBinding
 
-class InspectionResultFragment : Fragment() {
+class InspectionResultFragment(val first: String, val second: String) : Fragment() {
     private lateinit var binding: FragmentInspectionResultBinding
     private val mainActivity = activity as MainActivity
-    var firstResult: String = ""
-    var secondResult: String = ""
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,8 +24,8 @@ class InspectionResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.textInspectionRNick.text = mainActivity.userData.nickname
-        binding.textInspectionRFirst.text = firstResult
-        binding.textInspectionRSecond.text = secondResult
+        binding.textInspectionRFirst.text = first
+        binding.textInspectionRSecond.text = second
 
         binding.btnInspectionRRecommend.setOnClickListener {
             mainActivity.addFragment(6)

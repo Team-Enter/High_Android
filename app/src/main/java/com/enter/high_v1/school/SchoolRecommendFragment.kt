@@ -18,10 +18,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SchoolRecommendFragment : Fragment() {
+class SchoolRecommendFragment(private val first: String, private val second: String) : Fragment() {
     private lateinit var binding: FragmentSchoolRecommendBinding
     private val mainActivity = activity as MainActivity
-    private val schoolList = mutableListOf<SchoolRecommendData>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,8 +39,6 @@ class SchoolRecommendFragment : Fragment() {
     }
 
     private fun getSchoolList() {
-        val first = InspectionResultFragment().firstResult
-        val second = InspectionResultFragment().secondResult
         val token = "Bearer " + Token().getToken()
         val apiProvider = ApiProvider.getInstance().create(ServerApi::class.java)
         apiProvider.recommendSchool(token, SchoolRecommendRequest(first, second)).enqueue(object : Callback<SchoolRecommendResponse> {

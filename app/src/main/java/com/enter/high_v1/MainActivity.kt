@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // addFragment(0)
-        addFragment(3)
+        addFragment(0)
     }
 
     fun addFragment(index: Int) {
@@ -41,11 +40,17 @@ class MainActivity : AppCompatActivity() {
             1 -> transaction.replace(R.id.lay_main_frame, InspectionStartFragment())
             2 -> transaction.replace(R.id.lay_main_frame, MyPageFragment())
             3 -> transaction.replace(R.id.lay_main_frame, InspectionQuestFragment())
-
-            5 -> transaction.replace(R.id.lay_main_frame, InspectionResultFragment())
-            6 -> transaction.replace(R.id.lay_main_frame, SchoolRecommendFragment())
         }
         transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    fun inspectionResult(index: Int, first: String, second: String) {
+        val transaction = supportFragmentManager.beginTransaction()
+        when(index) {
+            0 -> transaction.replace(R.id.lay_main_frame, InspectionResultFragment(first, second))
+            1 -> transaction.replace(R.id.lay_main_frame, SchoolRecommendFragment(first, second))
+        }
         transaction.commit()
     }
 

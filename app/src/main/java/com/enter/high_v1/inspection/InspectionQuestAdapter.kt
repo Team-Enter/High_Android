@@ -52,7 +52,6 @@ class InspectionQuestAdapter(private val inspectionList: List<InspectionQuestLis
                     gradientDrawable.setColor(gray)
                 }
                 answerView[i].background = gradientDrawable
-                Log.d("tag", i.toString() + " " + answer.toString())
             }
         }
     }
@@ -66,14 +65,6 @@ class InspectionQuestAdapter(private val inspectionList: List<InspectionQuestLis
 
     override fun onBindViewHolder(holder: InspectionQuestViewHolder, position: Int) {
         holder.bind(inspectionList[position])
-
-//        holder.answer1.setOnClickListener { holder.addList(inspectionList[position], 1) }
-//        holder.answer2.setOnClickListener { holder.addList(inspectionList[position], 2) }
-//        holder.answer3.setOnClickListener { holder.addList(inspectionList[position], 3) }
-//        holder.answer4.setOnClickListener { holder.addList(inspectionList[position], 4) }
-//        holder.answer5.setOnClickListener { holder.addList(inspectionList[position], 5) }
-//        holder.answer6.setOnClickListener { holder.addList(inspectionList[position], 6) }
-//        holder.answer7.setOnClickListener { holder.addList(inspectionList[position], 7) }
 
         holder.answerView.forEachIndexed { index, answerView ->
             answerView.setOnClickListener { holder.addList(inspectionList[position], index + 1) }
