@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.enter.high_v1.ApiProvider
+import com.enter.high_v1.MainActivity
 import com.enter.high_v1.OpenApiProvider
 import com.enter.high_v1.OpenServerApi
-import com.enter.high_v1.R
+import com.enter.high_v1.ServerApi
 import com.enter.high_v1.databinding.FragmentInspectionQuestBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -48,6 +50,15 @@ class InspectionQuestFragment : Fragment() {
                 } else {
                     binding.btnInspectionQSubmit.visibility = View.INVISIBLE
                 }
+
+                binding.btnInspectionQSubmit.setOnClickListener {
+                    val emptyCheck = answerList.all { it != null }
+                    if (emptyCheck) {
+                        getScore()
+                    } else {
+                        Toast.makeText(activity, "검사가 완료되지 않았습니다", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         })
     }
@@ -73,4 +84,41 @@ class InspectionQuestFragment : Fragment() {
             }
         })
     }
+
+    private fun getScore() {
+        val score = mutableListOf<Int>()
+        for (i in 0..66 step 6) {
+            var s = 0
+            for(j in i..i + 5) {
+                s += answerList[j]!!
+            }
+            score.add(s)
+        }
+        var firstIndex = 0
+        var secondIndex = 0
+        for (i in 1..11) {
+            if (score[i] > score[firstIndex]) {
+                secondIndex = firstIndex
+                firstIndex = i
+            } else if(score[i] > score[secondIndex]) {
+                secondIndex = i
+            }
+        }
+
+        MainActivity().inspectionResult(0, aptitude[firstIndex], aptitude[secondIndex])
+    }
+
+    private val aptitude = listOf<String>(
+        "신체·운동능력",
+        "손재능",
+        "공간지각력",
+        "음악능력",
+        "창의력",
+        "언어능력",
+        "수리·논리력",
+        "자기성찰능력",
+        "대인관계능력",
+        "자연친화력",
+        "예술시각능력"
+    )
 }
