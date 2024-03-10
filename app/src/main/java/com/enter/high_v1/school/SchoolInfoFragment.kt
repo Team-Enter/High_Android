@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.enter.high_v1.ApiProvider
 import com.enter.high_v1.MainActivity
+import com.enter.high_v1.MyApplication
 import com.enter.high_v1.ServerApi
-import com.enter.high_v1.Token
 import com.enter.high_v1.databinding.FragmentSchoolInfoBinding
 import com.google.android.material.tabs.TabLayout
 import retrofit2.Call
@@ -19,24 +19,23 @@ import retrofit2.Response
 
 class SchoolInfoFragment(private val name: String) : Fragment() {
     private lateinit var binding: FragmentSchoolInfoBinding
-    var schoolInfo : SchoolInfoResponse? = null
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    var schoolInfoAll : SchoolInfoResponse? = null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSchoolInfoBinding.inflate(layoutInflater, container, false)
-        getSchoolInfo()
-        schoolInfo?.let { MainActivity().schoolDetailInfo(0, it) }
+        getSchoolResponseInfo()
+        // schoolInfo?.let { MainActivity().schoolDetailInfo(0, it) }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val mainActivity = activity as MainActivity
+        schoolInfoAll?.let { mainActivity.schoolDetailInfo(0, it) }
         binding.layInfoTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 when(tab.position) {
-                    0 -> schoolInfo?.let { MainActivity().schoolDetailInfo(0, it) }
-                    1 -> schoolInfo?.let { MainActivity().schoolDetailInfo(1, it) }
+                    0 -> schoolInfoAll?.let { mainActivity.schoolDetailInfo(0, it) }
+                    1 -> schoolInfoAll?.let { mainActivity.schoolDetailInfo(1, it) }
                 }
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -44,13 +43,13 @@ class SchoolInfoFragment(private val name: String) : Fragment() {
         })
     }
 
-    private fun getSchoolInfo() {
+    private fun getSchoolResponseInfo() {
         val apiProvider = ApiProvider.getInstance().create(ServerApi::class.java)
-        val token = "Bearer " + Token().getToken()
-        apiProvider.schoolInfo(token, SchoolInfoRequest(name)).enqueue(object : Callback<SchoolInfoResponse> {
+        val token = "Bearer " + MyApplication.prefs.getPref("token", "")
+        apiProvider.schoolInfo(token, name).enqueue(object : Callback<SchoolInfoResponse> {
             override fun onResponse(call: Call<SchoolInfoResponse>, response: Response<SchoolInfoResponse>) {
                 if (response.isSuccessful) {
-                    schoolInfo = response.body()
+                    schoolInfoAll = response.body()
                     response.body()?.let { setSchoolInfo(it) }
                 } else {
                     Log.d("server", response.code().toString())

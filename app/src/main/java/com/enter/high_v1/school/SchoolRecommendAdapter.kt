@@ -9,7 +9,6 @@ import com.enter.high_v1.databinding.ItemSchoolRecyclerBinding
 
 class SchoolRecommendAdapter(private val recommendList: List<SchoolRecommendData>) : Adapter<SchoolRecommendAdapter.SchoolRecommendViewHolder>() {
     inner class SchoolRecommendViewHolder(private val binding: ItemSchoolRecyclerBinding) : ViewHolder(binding.root) {
-        val itemView = binding.root
         fun bind(recommendData: SchoolRecommendData) {
             binding.textHomeItemName.text = recommendData.name
             binding.textHomeItemType.text = recommendData.Stype

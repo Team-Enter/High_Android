@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="15dp"
+    android:layout_marginTop="12dp"
     android:background="@drawable/home_recycler_background"
     android:id="@+id/lay_school_item">
 
@@ -23,7 +24,7 @@
         android:text="특목고"
         android:fontFamily="@font/inter_bold"
         android:textColor="#999999"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:layout_marginStart="15dp"
         app:layout_constraintStart_toEndOf="@id/img_home_item_logo"
         app:layout_constraintTop_toTopOf="@id/img_home_item_logo"/>
@@ -35,14 +36,14 @@
         android:text="대덕소프트웨어마이스터고등학교"
         android:fontFamily="@font/inter_bold"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/text_home_item_type"
         app:layout_constraintTop_toBottomOf="@id/text_home_item_type"/>
 
     <ImageView
         android:id="@+id/img_home_item_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:src="@drawable/item_place"
         android:layout_marginTop="3dp"
         app:layout_constraintStart_toStartOf="@id/text_home_item_name"

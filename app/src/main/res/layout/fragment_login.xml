@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".start.LoginFragment">
+    tools:context=".start.LoginFragment"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/img_login_logo"
@@ -25,7 +26,7 @@
         android:id="@+id/text_login_id"
         style="@style/text_start_edit"
         android:text="@string/start_id"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="@id/lay_login_id"
         app:layout_constraintTop_toBottomOf="@id/text_login_intro"/>
     

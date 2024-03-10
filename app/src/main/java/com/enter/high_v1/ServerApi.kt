@@ -1,9 +1,7 @@
 package com.enter.high_v1
 
 import com.enter.high_v1.mypage.MyPageData
-import com.enter.high_v1.school.SchoolInfoRequest
 import com.enter.high_v1.school.SchoolInfoResponse
-import com.enter.high_v1.school.SchoolRecommendRequest
 import com.enter.high_v1.school.SchoolRecommendResponse
 import com.enter.high_v1.start.LoginRequest
 import com.enter.high_v1.start.LoginResponse
@@ -13,29 +11,31 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ServerApi {
-    @POST("/user/signup")
+    @POST("user/signup")
     fun signUp(@Body request: SignupRequest): Call<Void>
 
-    @POST("/user/login")
+    @POST("user/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
-    @GET("/user/info")
+    @GET("user/info")
     fun getUserInfo(@Header("Authorization") token : String): Call<MyPageData>
 
-    @POST("/user/logout")
+    @POST("user/logout")
     fun logout(@Header("Authorization") token: String): Call<Void>
 
-    @GET("/feeds")
+    @GET("feeds")
     fun recommendSchool(
         @Header("Authorization") token: String,
-        @Body request: SchoolRecommendRequest
+        @Query("firstresult") firstresult: String,
+        @Query("secondresult") secondresult: String
     ): Call<SchoolRecommendResponse>
 
-    @GET("/feeds/info")
+    @GET("feeds/info")
     fun schoolInfo(
         @Header("Authorization") token: String,
-        @Body request: SchoolInfoRequest
+        @Query("name") name: String
     ): Call<SchoolInfoResponse>
 }

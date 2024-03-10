@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".home.HomeFragment">
+    tools:context=".home.HomeFragment"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lay_home_header"
@@ -150,10 +151,12 @@
         android:id="@+id/recycler_home"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintVertical_bias="0"
+        android:layout_marginTop="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_home_recommend"/>
+        app:layout_constraintTop_toBottomOf="@id/text_home_recommend"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

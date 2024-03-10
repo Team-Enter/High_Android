@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiProvider {
     private var instance: Retrofit? = null
-    private val BASE_URL = "http://10.0.2.2:8080"
+    private val BASE_URL = "http://10.0.2.2:8080/"
 
     fun getInstance(): Retrofit {
         if (instance == null) {

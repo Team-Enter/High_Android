@@ -1,8 +1,5 @@
 package com.enter.high_v1.school
 
-data class SchoolInfoRequest(
-    val name: String
-)
 
 data class SchoolInfoResponse(
     val name: String,

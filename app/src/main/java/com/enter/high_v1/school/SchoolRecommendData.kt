@@ -6,11 +6,6 @@ data class SchoolRecommendData(
     val location: String
 )
 
-data class SchoolRecommendRequest(
-    val firstresult: String,
-    val secondresult: String
-)
-
 data class SchoolRecommendResponse(
     val firstData: List<SchoolRecommendData>,
     val secondData: List<SchoolRecommendData>

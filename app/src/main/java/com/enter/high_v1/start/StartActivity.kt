@@ -15,10 +15,7 @@ class StartActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
         when (index) {
-            0 -> {
-                transaction.replace(R.id.lay_start_frame, StartChoiceFragment())
-                fragmentManager.popBackStack()
-            }
+            0 -> transaction.replace(R.id.lay_start_frame, StartChoiceFragment())
             1 -> transaction.replace(R.id.lay_start_frame, SignupFragment())
             2 -> transaction.replace(R.id.lay_start_frame, LoginFragment())
         }

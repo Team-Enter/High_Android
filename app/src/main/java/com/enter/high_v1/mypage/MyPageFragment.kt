@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.enter.high_v1.ApiProvider
 import com.enter.high_v1.MainActivity
+import com.enter.high_v1.MyApplication
 import com.enter.high_v1.ServerApi
-import com.enter.high_v1.Token
 import com.enter.high_v1.databinding.FragmentMyPageBinding
 import com.enter.high_v1.start.StartActivity
 import retrofit2.Call
@@ -21,7 +21,7 @@ import retrofit2.Response
 
 class MyPageFragment : Fragment() {
     private lateinit var binding: FragmentMyPageBinding
-    private val userData = MainActivity().userData
+    // private val mainActivity = activity as MainActivity
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +43,7 @@ class MyPageFragment : Fragment() {
                     logout()
                 })
                 .setNegativeButton("다음에", DialogInterface.OnClickListener {_, _ -> })
+                .show()
         }
 
         binding.btnMyBug.setOnClickListener {
@@ -50,20 +51,24 @@ class MyPageFragment : Fragment() {
             builder.setTitle("죄송합니다.")
                 .setMessage("아직 '버그제보'는 기획 중에 있기에 개발되지 않았습니다")
                 .setPositiveButton("확인", DialogInterface.OnClickListener {_, _ -> })
+                .show()
         }
 
         binding.imgMyCancel.setOnClickListener {
-            MainActivity().addFragment(0)
+            val mainActivity = activity as MainActivity
+            mainActivity.replaceHomeFragment()
         }
     }
 
     private fun setUserData() {
+        val userData = MainActivity().getUserData()
+        Log.d("user", userData.toString())
         binding.textMyName.text = userData.nickname
         binding.textMyMail.text = userData.email
     }
 
     private fun logout() {
-        val token = "Bearer " + Token().getToken()
+        val token = "Bearer " + MyApplication.prefs.getPref("token", "")
         val apiProvider = ApiProvider.getInstance().create(ServerApi::class.java)
         apiProvider.logout(token).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {

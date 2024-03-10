@@ -10,17 +10,16 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.enter.high_v1.ApiProvider
 import com.enter.high_v1.MainActivity
+import com.enter.high_v1.MyApplication
 import com.enter.high_v1.ServerApi
-import com.enter.high_v1.Token
 import com.enter.high_v1.databinding.FragmentSchoolRecommendBinding
-import com.enter.high_v1.inspection.InspectionResultFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class SchoolRecommendFragment(private val first: String, private val second: String) : Fragment() {
     private lateinit var binding: FragmentSchoolRecommendBinding
-    private val mainActivity = activity as MainActivity
+    // private val mainActivity = activity as MainActivity
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,16 +31,16 @@ class SchoolRecommendFragment(private val first: String, private val second: Str
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textRecommendNick.text = mainActivity.userData.nickname
+        binding.textRecommendNick.text = MyApplication.prefs.getPref("nick", "")
         binding.imgRecommendProfile.setOnClickListener {
             MainActivity().addFragment(2)
         }
     }
 
     private fun getSchoolList() {
-        val token = "Bearer " + Token().getToken()
+        val token = "Bearer " + MyApplication.prefs.getPref("token", "")
         val apiProvider = ApiProvider.getInstance().create(ServerApi::class.java)
-        apiProvider.recommendSchool(token, SchoolRecommendRequest(first, second)).enqueue(object : Callback<SchoolRecommendResponse> {
+        apiProvider.recommendSchool(token, first, second).enqueue(object : Callback<SchoolRecommendResponse> {
             override fun onResponse(call: Call<SchoolRecommendResponse>, response: Response<SchoolRecommendResponse>) {
                 if (response.isSuccessful) {
                     val schoolList1: List<SchoolRecommendData>? = response.body()?.firstData

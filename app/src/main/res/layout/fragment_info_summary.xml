@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="30dp"
-    tools:context=".school.InfoSummaryFragment">
+    tools:context=".school.InfoSummaryFragment"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/text_summary_info"

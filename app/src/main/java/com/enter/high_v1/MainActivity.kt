@@ -3,8 +3,6 @@ package com.enter.high_v1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.enter.high_v1.databinding.ActivityMainBinding
 import com.enter.high_v1.home.HomeFragment
 import com.enter.high_v1.inspection.InspectionQuestFragment
@@ -23,13 +21,49 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var userData: MyPageData = MyPageData("user", "푕힁영", "email")
+    //val token = Token()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        getUserData()
+
+        // token = intent.getStringExtra("token").toString()
+
+        // val accessToken = intent.getStringExtra("token")
+        // token.setToken(accessToken.toString())
         setContentView(binding.root)
 
-        addFragment(0)
+        replaceHomeFragment()
+    }
+
+   fun getUserData() : MyPageData {
+        val apiProvider = ApiProvider.getInstance().create(ServerApi::class.java)
+        val myApplication = MyApplication
+        val token = myApplication.prefs.getPref("token", "")
+        val accessToken = "Bearer $token"
+       var userData = MyPageData("tjdms", "서은", "tjdms@gmail.com")
+        Log.d("token", accessToken)
+        apiProvider.getUserInfo(accessToken).enqueue(object : Callback<MyPageData> {
+            override fun onResponse(call: Call<MyPageData>, response: Response<MyPageData>) {
+                if (response.isSuccessful) {
+                    // MainActivity().userData = response.body()!!
+                    // binding.textHomeName.text = response.body()!!.nickname + "님"
+                    userData = response.body()!!
+                    Log.d("user", userData.toString())
+                } else {
+                    Log.d("server", response.code().toString())
+                    Log.d("server", response.message().toString())
+                }
+            }
+            override fun onFailure(call: Call<MyPageData>, t: Throwable) {
+                Log.d("server", t.message.toString())
+            }
+        })
+       return userData
+    }
+
+    fun replaceHomeFragment() {
+        supportFragmentManager.beginTransaction().replace(R.id.lay_main_frame, HomeFragment()).commit()
     }
 
     fun addFragment(index: Int) {

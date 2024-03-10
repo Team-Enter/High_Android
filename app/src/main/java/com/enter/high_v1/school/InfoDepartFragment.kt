@@ -2,6 +2,7 @@ package com.enter.high_v1.school
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,16 +19,17 @@ class InfoDepartFragment(private val schoolInfo: SchoolInfoResponse) : Fragment(
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentInfoDepartBinding.inflate(layoutInflater, container, false)
-        setDepartData()
+        // setDepartData()
         return binding.root
     }
 
     private fun setDepartData() {
         for (depart in schoolInfo.lesson) {
             val data = depart.split(" ")
+            Log.d("depart", data.toString())
+
             val tableRow = TableRow(activity)
             tableRow.setBackgroundColor(Color.parseColor("#D9D9D9"))
-            tableRow.weightSum = 9F
 
             for (i in 0..2) {
                 val textView = TextView(activity)

@@ -1,6 +1,7 @@
 package com.enter.high_v1.start
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,8 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.enter.high_v1.ApiProvider
 import com.enter.high_v1.MainActivity
+import com.enter.high_v1.MyApplication
 import com.enter.high_v1.ServerApi
-import com.enter.high_v1.Token
 import com.enter.high_v1.databinding.FragmentLoginBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,10 +33,12 @@ class LoginFragment : Fragment() {
         binding.btnLoginLogin.setOnClickListener {
             val id = binding.editLoginId.text.toString()
             val pw = binding.editLoginPw.text.toString()
-            if (id.length >= 5 && pw.length >= 8)
+            if (id.length >= 5 && pw.length >= 8) {
                 login(id, pw)
-            else
+            }
+            else {
                 Toast.makeText(activity, "아이디나 비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -45,10 +48,12 @@ class LoginFragment : Fragment() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if(response.isSuccessful) {
                     Log.d("token", response.body()?.accessToken.toString())
-                    val token = response.body()?.accessToken.toString()
-                    Token().setToken(token)
+                    val accessToken = response.body()?.accessToken.toString()
+
+                    MyApplication.prefs.setPref("token", accessToken)
 
                     val intent = Intent(activity, MainActivity::class.java)
+                    // intent.putExtra("token", accessToken)
                     startActivity(intent)
                 } else {
                     Log.d("server", response.code().toString())

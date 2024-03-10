@@ -22,20 +22,23 @@ import retrofit2.Response
 class InspectionQuestFragment : Fragment() {
     private lateinit var binding: FragmentInspectionQuestBinding
     var answerList = arrayOfNulls<Int>(67)
+    private lateinit var mainActivity: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentInspectionQuestBinding.inflate(layoutInflater, container, false)
-
-        getInspectionList()
-
+        answerList[0] = 0
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        mainActivity = activity as MainActivity
+
+        getInspectionList()
 
         binding.recyclerInspectionQ.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -58,6 +61,7 @@ class InspectionQuestFragment : Fragment() {
                     } else {
                         Toast.makeText(activity, "검사가 완료되지 않았습니다", Toast.LENGTH_SHORT).show()
                     }
+                    //mainActivity.inspectionResult(0, "손재능", "신체·운동능력")
                 }
             }
         })
@@ -87,7 +91,7 @@ class InspectionQuestFragment : Fragment() {
 
     private fun getScore() {
         val score = mutableListOf<Int>()
-        for (i in 0..66 step 6) {
+        for (i in 1..66 step 6) {
             var s = 0
             for(j in i..i + 5) {
                 s += answerList[j]!!
@@ -104,8 +108,10 @@ class InspectionQuestFragment : Fragment() {
                 secondIndex = i
             }
         }
+        Log.d("inspection", answerList.toString())
+        Log.d("inspection", "$firstIndex  $secondIndex")
 
-        MainActivity().inspectionResult(0, aptitude[firstIndex], aptitude[secondIndex])
+        // mainActivity.inspectionResult(0, aptitude[firstIndex], aptitude[secondIndex])
     }
 
     private val aptitude = listOf<String>(

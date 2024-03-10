@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.enter.high_v1.databinding.ItemSchoolRecyclerBinding
 
-class HomeAdapter(private val homeList: List<HomeListData>) : Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(private val homeList: List<HomeListData>, private val schoolRecommendClickListener: SchoolRecommendClickListener) : Adapter<HomeAdapter.HomeViewHolder>() {
     inner class HomeViewHolder(private val binding: ItemSchoolRecyclerBinding) : ViewHolder(binding.root) {
         fun bind(homeData: HomeListData) {
             binding.textHomeItemName.text = homeData.schoolName
@@ -24,5 +24,12 @@ class HomeAdapter(private val homeList: List<HomeListData>) : Adapter<HomeAdapte
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.bind(homeList[position])
+        holder.itemView.setOnClickListener {
+            schoolRecommendClickListener.onSchoolClicked(homeList[position].schoolName)
+        }
+    }
+
+    interface SchoolRecommendClickListener {
+        fun onSchoolClicked(schoolName: String)
     }
 }
