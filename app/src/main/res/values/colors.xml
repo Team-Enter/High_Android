@@ -5,4 +5,6 @@
     <color name="blue">#0080F7</color>
     <color name="text_blue">#0081F9</color>
     <color name="yellow">#FFDA58</color>
+
+    <color name="tab_select_background">#E8F4FF</color>
 </resources>
